@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         title: "Docker",
-        children: ["/docker/"]
+        children: ["/docker-install/", "/docker-comandos/", "/docker-compose/"]
       },
       {
         title: "Sistemas Operacionais",
