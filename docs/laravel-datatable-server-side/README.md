@@ -1,0 +1,1 @@
+# Laravel DataTable Server Side

@@ -1,11 +1,18 @@
 module.exports = {
   description: "Just playing around",
+  title: "Maicon Cerutti",
   themeConfig: {
     logo: "/images/perfil.jpeg",
-    title: "Maicon Cerutti",
     nav: [
       { text: "Home", link: "/" },
-      { text: "Guia", link: "/guia/" }
+      {
+        text: "Linkedin",
+        link: "https://www.linkedin.com/in/maicon-cerutti-516918114/"
+      },
+      {
+        text: "GitHub",
+        link: "https://github.com/CeruttiMaicon"
+      }
     ],
     sidebar: [
       {
@@ -22,7 +29,10 @@ module.exports = {
       },
       {
         title: "Sistemas Operacionais",
-        children: ["/linux-mint/", "/linux-ubuntu/"]
+        children: [
+          { title: "Linux Mint", children: ["/linux-mint-tema-mac/"] },
+          { title: "Linux Ubuntu", children: ["/linux-ubuntu-tema-mac/"] }
+        ]
       },
       {
         title: "Amazon",
@@ -30,7 +40,14 @@ module.exports = {
       },
       {
         title: "Laravel",
-        children: ["/laravel/"]
+        children: [
+          "/laravel-uploud-de-imagem/",
+          "/laravel-datatable-server-side/",
+          "/laravel-dompdf/",
+          "/laravel-homestad/",
+          "/laravel-relationship/",
+          "/laravel-vue-validation-for-laravel/"
+        ]
       },
       {
         title: "Vue.JS",

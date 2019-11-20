@@ -1,0 +1,1 @@
+# Vue Validation for Laravel
