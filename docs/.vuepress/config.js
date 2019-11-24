@@ -1,6 +1,6 @@
 module.exports = {
   description: "Just playing around",
-  title: "Maicon Cerutti",
+  title: "maiconcerutti.dev",
   themeConfig: {
     logo: "/images/perfil.jpeg",
     nav: [
@@ -42,6 +42,7 @@ module.exports = {
         title: "Laravel",
         children: [
           "/laravel-uploud-de-imagem/",
+          "/laravel-uploud-de-anexo/",
           "/laravel-datatable-server-side/",
           "/laravel-dompdf/",
           "/laravel-homestad/",
@@ -56,10 +57,6 @@ module.exports = {
       {
         title: "Visual Studio Code",
         children: ["/visual-studio-code/"]
-      },
-      {
-        title: "LAMP",
-        children: ["/lamp/"]
       },
       {
         title: "GIT",

@@ -15,5 +15,5 @@ sudo chmod +x /usr/local/bin/docker-compose
 Para verificar se ele foi instalado corretamente:
 
 ```bash
-$ docker-compose --version
+docker-compose --version
 ```
