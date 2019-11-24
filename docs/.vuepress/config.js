@@ -1,5 +1,5 @@
 module.exports = {
-  description: "Just playing around",
+  description: "Minhas anotações, competências e documentações :)",
   title: "maiconcerutti.dev",
   themeConfig: {
     logo: "/images/perfil.jpeg",
