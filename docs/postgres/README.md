@@ -64,7 +64,7 @@ Nesse estágio você pode manipular o banco utilizando a linguagem SQL do Postgr
 Ainda dentro do client de linha de comando do Postgre digite:
 
 ```bash
-\password postgres
+password postgres
 ```
 
 Ele vai pedir que você digite a nova senha duas vezes.
@@ -79,7 +79,11 @@ help
 
 – Você pode pesquisar no menu de aplicativos do seu S.O por: pgadmin4
 
-– Ou acessar pelo navegador a url http://127.0.0.1:46245/browser/
+– Ou acessar pelo navegador a url
+
+```link
+http://127.0.0.1:46245/browser/
+```
 
 – A partir do usuário postgres você consegue criar e logar nos bancos.
 

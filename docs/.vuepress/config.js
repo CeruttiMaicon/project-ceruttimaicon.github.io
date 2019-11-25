@@ -1,10 +1,10 @@
 module.exports = {
-  description: "Minhas anotações, competências e documentações :)",
+  description: "Minhas competências, anotações e documentações :)",
   title: "maiconcerutti.dev",
   themeConfig: {
     logo: "/images/perfil.jpeg",
     nav: [
-      { text: "Home", link: "/" },
+      { text: "Guide", link: "/guide/" },
       {
         text: "Linkedin",
         link: "https://www.linkedin.com/in/maicon-cerutti-516918114/"
@@ -15,6 +15,10 @@ module.exports = {
       }
     ],
     sidebar: [
+      {
+        title: "Guide",
+        children: ["/guide/"]
+      },
       {
         title: "Postgres",
         children: ["/postgres/"]
