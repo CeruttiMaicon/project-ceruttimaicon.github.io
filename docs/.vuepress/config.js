@@ -55,6 +55,10 @@ module.exports = {
         ]
       },
       {
+        title: "Lumen",
+        children: ["/JWT-Authenticated-API-with-lumen/"]
+      },
+      {
         title: "Vue.JS",
         children: ["/vue-js/"]
       },
