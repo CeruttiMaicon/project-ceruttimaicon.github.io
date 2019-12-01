@@ -426,4 +426,8 @@ Espero que este artigo tenha ajudado você de alguma forma e que você desenvolv
 
 Até mais. :)
 
-## Referência
+## Referências
+
+https://dev.to/ndiecodes/build-a-jwt-authenticated-api-with-lumen-2afm
+
+https://jwt-auth.readthedocs.io/en/develop/lumen-installation/
