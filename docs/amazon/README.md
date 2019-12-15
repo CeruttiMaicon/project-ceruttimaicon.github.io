@@ -49,7 +49,7 @@ $ cd ~/DownloadBucketS3
 E agora para baixar o conteúdo do bucket faça o seguinte comando:
 
 ```bash
-aws s3 sync s3://mybucket .
+$ aws s3 sync s3://mybucket .
 ```
 
 No lugar de **"mybucket"** coloque o nome real do bucket que você pretende baixar.

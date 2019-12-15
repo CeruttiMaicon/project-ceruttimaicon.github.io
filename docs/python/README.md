@@ -29,5 +29,5 @@ $ sudo ln -s python3 /usr/bin/python
 Pronto! agora digitando o comando 'python' ele já ira funcionar na versão 3.
 
 ```bash
-python --version
+$ python --version
 ```

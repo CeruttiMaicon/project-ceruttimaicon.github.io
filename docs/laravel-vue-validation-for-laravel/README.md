@@ -185,7 +185,7 @@ O Vee-validate está disponível apenas no NPM atualmente, mas espera-se que ele
 Então, para obter a versão do plugin compatível do Vue 2, eu tenho que executar o seguinte comando:
 
 ```bash
-npm install vee-validate@next --save
+$ npm install vee-validate@next --save
 ```
 
 Então, autorizarei o Vue a usá-lo no meu JavaScript.

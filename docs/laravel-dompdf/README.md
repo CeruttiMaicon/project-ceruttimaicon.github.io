@@ -1,11 +1,5 @@
 # DOM PDF
 
-Link de acesso tutorial:
-
-```bash
-https://blog.especializati.com.br/gerar-pdf-no-laravel-com-dompdf/
-```
-
 Link de acesso a documentação no GitHub:
 
 ```bash
@@ -110,3 +104,7 @@ Pronto!
 O seu PDF terá um resultado semelhante a esse:
 
 > (obs: lembre-se que um PDF é um documento bem mais simples e por isso ele não suporta varias Tags de estilo CSS e HTML. E o DOMPDF também não suporta o bootstrap até o momento).
+
+## Referências
+
+[Carlos Ferreita](https://blog.especializati.com.br/laravel-redirecionar-apos-autenticacao/#autor). **Gerar PDF no Laravel com DOMPDF**. [https://blog.especializati.com.br/gerar-pdf-no-laravel-com-dompdf/](https://blog.especializati.com.br/gerar-pdf-no-laravel-com-dompdf/)Acesso em: 14 dez 2019.

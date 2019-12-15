@@ -1,6 +1,6 @@
 module.exports = {
   description: "Minhas competências, anotações e documentações :)",
-  title: "maiconcerutti.dev",
+  title: "maiconcerutti.js.org",
   themeConfig: {
     logo: "/images/perfil.jpeg",
     nav: [
@@ -29,7 +29,12 @@ module.exports = {
       },
       {
         title: "Docker",
-        children: ["/docker-install/", "/docker-comandos/", "/docker-compose/"]
+        children: [
+          "/docker-laradock/",
+          "/docker-install/",
+          "/docker-comandos/",
+          "/docker-compose/"
+        ]
       },
       {
         title: "Sistemas Operacionais",
@@ -56,19 +61,20 @@ module.exports = {
       },
       {
         title: "Lumen",
-        children: ["/JWT-Authenticated-API-with-lumen/"]
+        children: ["/lumen-JWT-Authenticated-API-with-lumen/"]
       },
       {
         title: "Vue.JS",
         children: ["/vue-js/"]
       },
-      {
-        title: "Visual Studio Code",
-        children: ["/visual-studio-code/"]
-      },
+
       {
         title: "GIT",
         children: ["/git/"]
+      },
+      {
+        title: "Zero Absoluto",
+        children: ["/install-programns/"]
       }
     ]
   }

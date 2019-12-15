@@ -15,37 +15,37 @@ O pacote de instalação do Docker disponível no repositório oficial do Ubuntu
 Primeiro, atualize sua lista atual de pacotes:
 
 ```bash
-sudo apt update
+$ sudo apt update
 ```
 
 Em seguida, instale alguns pacotes de pré-requisitos que permitem que o apt utilize pacotes via HTTPS:
 
 ```bash
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
 Então adicione a chave GPG para o repositório oficial do Docker em seu sistema:
 
 ```bash
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
 Adicione o repositório do Docker às fontes do APT:
 
 ```bash
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 ```
 
 A seguir, atualize o banco de dados de pacotes com os pacotes Docker do repositório recém adicionado:
 
 ```bash
-sudo apt update
+$ sudo apt update
 ```
 
 Certifique-se de que você irá instalar a partir do repositório do Docker em vez do repositório padrão do Ubuntu:
 
 ```bash
-apt-cache policy docker-ce
+$ apt-cache policy docker-ce
 ```
 
 Você verá uma saída como esta, embora o número da versão do Docker possa estar diferente:
@@ -66,13 +66,13 @@ Observe que o docker-ce não está instalado, mas o candidato para instalação 
 Finalmente, instale o Docker:
 
 ```bash
-sudo apt install docker-ce
+$ sudo apt install docker-ce
 ```
 
 O Docker agora deve ser instalado, o daemon iniciado e o processo ativado para iniciar na inicialização. Verifique se ele está sendo executado:
 
 ```bash
-sudo systemctl status docker
+$ sudo systemctl status docker
 ```
 
 A saída deve ser semelhante à seguinte, mostrando que o serviço está ativo e executando:
@@ -102,13 +102,13 @@ See 'docker run --help'.
 Se você quiser evitar digitar sudo sempre que você executar o comando docker, adicione seu nome de usuário ao grupo docker:
 
 ```bash
-sudo usermod -aG docker \${USER}
+$ sudo usermod -aG docker nome-do-usuario
 ```
 
 Para aplicar a nova associação ao grupo, efetue logout do servidor e faça logon novamente ou digite o seguinte:
 
 ```bash
-su - \${USER}
+$ su - nome-do-usuario
 ```
 
 Você será solicitado a entrar com seu usuário e senha para continuar.
@@ -116,19 +116,20 @@ Você será solicitado a entrar com seu usuário e senha para continuar.
 Confirme que seu usuário está agora adicionado ao grupo docker digitando:
 
 ```bash
-id -nG
+$ id -nG
 ```
 
-Output
+Saida:
 
 ```bash
+Output
 sammy sudo docker
 ```
 
 Se você precisar adicionar um usuário ao grupo docker com o qual você não está logado, declare o nome do usuário explicitamente usando:
 
 ```bash
-sudo usermod -aG docker nome-do-usuário
+$ sudo usermod -aG docker nome-do-usuário
 ```
 
 O restante desse artigo assume que você está executando o comando docker como um usuário do grupo docker. Se você optar por não fazê-lo, por favor, prefixe os comandos com sudo.
