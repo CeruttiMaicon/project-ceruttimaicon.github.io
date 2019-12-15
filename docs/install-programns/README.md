@@ -82,6 +82,12 @@ $ nodejs -v
 $ sudo apt install zsh
 ```
 
+> Após ter o NPM instalado você também pode instalar o spaceship-prompt
+
+```bash
+$ npm install spaceship-prompt
+```
+
 ### Identidade Git
 
 Criando Identidade Git
