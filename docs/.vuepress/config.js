@@ -1,6 +1,6 @@
 module.exports = {
   description: "Minhas competências, anotações e documentações :)",
-  title: "maiconcerutti.js.org",
+  title: "ceruttimaicon.js.org",
   themeConfig: {
     logo: "/images/perfil.jpeg",
     nav: [

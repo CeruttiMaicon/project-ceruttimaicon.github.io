@@ -35,6 +35,14 @@ Ao inserir novas extenções para atualizar o seu Gist utilize o atalho.
 Shift + Alt + U
 ```
 
+## Fira Code
+
+Instale a fonte com o comando:
+
+```bash
+$ sudo apt install fonts-firacode
+```
+
 ## Programas a serem instalados
 
 ### Já possuem instruções de instalação

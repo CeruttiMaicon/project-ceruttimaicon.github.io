@@ -6,7 +6,7 @@ Suportando uma variedade de serviços comuns, todos pré-configurados para forne
 
 ## Instalação Laradock
 
-Utilize o [site oficial](https://laradock.io/getting-started/) para se guiar e fazer a instalação. Mas fiz uma previa abaixo. :)
+Utilize o [site oficial](https://laradock.io/getting-started/) para se guiar e fazer a instalação, mas fiz uma previa abaixo. :)
 
 ### Instalação como Submodulo
 
@@ -24,7 +24,7 @@ $ cp laradock/env-example laradock/.env
 
 ### Utilização como Submodulo
 
-> Ao já possuir ele instalado no projeto
+> Se existir o submodulo no projeto, pule a estapa a seguir.
 
 Clone o laradock como submodulo utilizando o seguinte comando:
 
@@ -41,7 +41,7 @@ Entre na pasta laradock e copie **env-example** para **.env**
 $ cp laradock/env-example laradock/.env
 ```
 
-> Você pode editar o **.env** arquivo para escolher quais softwares você deseja instalar no seu ambiente. Você sempre pode consultar o **docker-compose.yml** arquivo para ver como essas variáveis ​​estão sendo utilizadas.
+> Você pode editar o **.env** arquivo para escolher quais softwares você deseja instalar no seu ambiente. Você sempre pode consultar o **docker-compose.yml** arquivo para ver como essas variáveis estão sendo utilizadas.
 
 > Você também tem total liberdade para trocar a versões utilizadas de cada software.
 >
@@ -69,8 +69,10 @@ Crie o ambiente e execute-o usando docker-compose.
 
 **.env**
 
+> Ajustar essa configuração para utilizar o MySQL
+
 ```.env
-MYSQL_VERSION=4.9
+MYSQL_VERSION=5.7
 ```
 
 ```bash
@@ -85,11 +87,11 @@ $ docker-compose up -d nginx mysql phpmyadmin portainer
 
 ## Criando atalho de start do Laradock
 
-Você pode criar um alias no seu computador para executar o Laradock sem precisar toda vez entrar na pasta manualmente e executar o comando docker-compose.
+Você pode criar um atalho no seu computador para executar o Laradock, desta forma evitará ter que entrar maanualmente na pasta e executar o comando docker-compose.
 
 Para isso faça o seguinte:
 
-Utilizando o ZSH ou Bash edite o arquivo .zshrc ou .bashrc respectivamente.
+Utilizando o ZSH ou Bash edite o arquivo **~/.zshrc** ou **~/.bashrc** respectivamente.
 
 Adicione o seguinte.
 
@@ -131,7 +133,7 @@ $ project-name-stop
 
 ```
 Acesso PHPMyAdmin
-root
+Login:default
 Senha:secret
 ```
 
@@ -139,7 +141,7 @@ Senha:secret
 
 ```
 Acesso PGAdmin4
-pgadmin4@pgadmin.org
+login:pgadmin4@pgadmin.org
 Senha:admin
 ```
 
