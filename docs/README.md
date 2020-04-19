@@ -22,5 +22,5 @@ features:
     details: Laradock é um ambiente de desenvolvimento PHP completo baseado no Docker. Criado com o proposito de criar ambientes de desenvolvimento rápidos e fáceis para o Laravel. Mas também suporta outros frameworks PHP.
   - title: Vuepress
     details: O VuePress gera um  HTML estático para criar um sistema simples de documentação, baseado em arquivos de markdown e utilizando da tecnologia do VueJS. Ele é simples prático e rápido. É com essa tecnologia que este site está sendo desenvolvido.
-footer: MIT Licensed | Maicon Cerutti - 2019
+footer: MIT Licensed | Maicon Cerutti 2019 - 2020
 ---

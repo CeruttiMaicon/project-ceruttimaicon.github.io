@@ -7,25 +7,25 @@ module.exports = {
       { text: "Guide", link: "/guide/" },
       {
         text: "Linkedin",
-        link: "https://www.linkedin.com/in/maicon-cerutti-516918114/"
+        link: "https://www.linkedin.com/in/maicon-cerutti-516918114/",
       },
       {
         text: "GitHub",
-        link: "https://github.com/CeruttiMaicon"
-      }
+        link: "https://github.com/CeruttiMaicon",
+      },
     ],
     sidebar: [
       {
         title: "Guide",
-        children: ["/guide/"]
+        children: ["/guide/"],
       },
       {
         title: "Postgres",
-        children: ["/postgres/"]
+        children: ["/postgres/"],
       },
       {
         title: "Python",
-        children: ["/python/"]
+        children: ["/python/"],
       },
       {
         title: "Docker",
@@ -33,19 +33,19 @@ module.exports = {
           "/docker-laradock/",
           "/docker-install/",
           "/docker-comandos/",
-          "/docker-compose/"
-        ]
+          "/docker-compose/",
+        ],
       },
       {
         title: "Sistemas Operacionais",
         children: [
           { title: "Linux Mint", children: ["/linux-mint-tema-mac/"] },
-          { title: "Linux Ubuntu", children: ["/linux-ubuntu-tema-mac/"] }
-        ]
+          { title: "Linux Ubuntu", children: ["/linux-ubuntu-tema-mac/"] },
+        ],
       },
       {
         title: "Amazon",
-        children: ["/amazon/"]
+        children: ["/amazon/"],
       },
       {
         title: "Laravel",
@@ -56,26 +56,30 @@ module.exports = {
           "/laravel-dompdf/",
           "/laravel-homestad/",
           "/laravel-relationship/",
-          "/laravel-vue-validation-for-laravel/"
-        ]
+          "/laravel-vue-validation-for-laravel/",
+        ],
       },
       {
         title: "Lumen",
-        children: ["/lumen-JWT-Authenticated-API-with-lumen/"]
+        children: ["/lumen-JWT-Authenticated-API-with-lumen/"],
       },
       {
         title: "Vue.JS",
-        children: ["/vue-js/"]
+        children: ["/vue-js/"],
       },
 
       {
         title: "GIT",
-        children: ["/git/"]
+        children: ["/git/"],
       },
       {
         title: "Zero Absoluto",
-        children: ["/install-programns/"]
-      }
-    ]
-  }
+        children: ["/install-programns/"],
+      },
+      {
+        title: "SonarQuebe",
+        children: ["/sonarqube/"],
+      },
+    ],
+  },
 };
