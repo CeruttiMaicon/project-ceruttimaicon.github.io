@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JWT Authenticated API with Lumen | ceruttimaicon.js.org</title>
+    <meta name="description" content="Minhas competências, anotações e documentações :)">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.6114eb0d.css" as="style"><link rel="preload" href="/assets/js/app.9f1471da.js" as="script"><link rel="preload" href="/assets/js/2.028e1938.js" as="script"><link rel="preload" href="/assets/js/24.50c00c2e.js" as="script"><link rel="prefetch" href="/assets/js/10.08868909.js"><link rel="prefetch" href="/assets/js/11.943674e1.js"><link rel="prefetch" href="/assets/js/12.1b47a952.js"><link rel="prefetch" href="/assets/js/13.d624b346.js"><link rel="prefetch" href="/assets/js/14.9fc2e13f.js"><link rel="prefetch" href="/assets/js/15.b4d1d070.js"><link rel="prefetch" href="/assets/js/16.f8600bec.js"><link rel="prefetch" href="/assets/js/17.04779655.js"><link rel="prefetch" href="/assets/js/18.39be547d.js"><link rel="prefetch" href="/assets/js/19.123c4600.js"><link rel="prefetch" href="/assets/js/20.c2e66d08.js"><link rel="prefetch" href="/assets/js/21.6337def7.js"><link rel="prefetch" href="/assets/js/22.4c3201aa.js"><link rel="prefetch" href="/assets/js/23.43b37aba.js"><link rel="prefetch" href="/assets/js/25.cf9020ac.js"><link rel="prefetch" href="/assets/js/26.3bb7a708.js"><link rel="prefetch" href="/assets/js/27.321a67b7.js"><link rel="prefetch" href="/assets/js/28.95794bb3.js"><link rel="prefetch" href="/assets/js/29.38dc25ea.js"><link rel="prefetch" href="/assets/js/3.2163d001.js"><link rel="prefetch" href="/assets/js/30.0106a1e8.js"><link rel="prefetch" href="/assets/js/31.fafb5c65.js"><link rel="prefetch" href="/assets/js/4.59116900.js"><link rel="prefetch" href="/assets/js/5.d9d48266.js"><link rel="prefetch" href="/assets/js/6.e034057d.js"><link rel="prefetch" href="/assets/js/7.b0b0ffdc.js"><link rel="prefetch" href="/assets/js/8.cf52df91.js"><link rel="prefetch" href="/assets/js/9.318f7b79.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6114eb0d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/perfil.jpeg" alt="ceruttimaicon.js.org" class="logo"> <span class="site-name can-hide">ceruttimaicon.js.org</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">Guide</a></div><div class="nav-item"><a href="https://www.linkedin.com/in/maicon-cerutti-516918114/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Linkedin
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/CeruttiMaicon" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">Guide</a></div><div class="nav-item"><a href="https://www.linkedin.com/in/maicon-cerutti-516918114/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Linkedin
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/CeruttiMaicon" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Guide</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Postgres</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Sistemas Operacionais</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Amazon</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Laravel</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Lumen</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lumen-JWT-Authenticated-API-with-lumen/" class="active sidebar-link">JWT Authenticated API with Lumen</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lumen-JWT-Authenticated-API-with-lumen/#pre-requisitos" class="sidebar-link">Pré requisitos</a></li><li class="sidebar-sub-header"><a href="/lumen-JWT-Authenticated-API-with-lumen/#instalacao" class="sidebar-link">Instalação</a></li><li class="sidebar-sub-header"><a href="/lumen-JWT-Authenticated-API-with-lumen/#criacao-da-tabela-de-usuarios" class="sidebar-link">Criação da tabela de usuários</a></li><li class="sidebar-sub-header"><a href="/lumen-JWT-Authenticated-API-with-lumen/#instalacao-do-pacote-de-autenticacao-jwt" class="sidebar-link">Instalação do pacote de autenticação JWT</a></li><li class="sidebar-sub-header"><a href="/lumen-JWT-Authenticated-API-with-lumen/#rotas-autenticadas" class="sidebar-link">Rotas autenticadas</a></li><li class="sidebar-sub-header"><a href="/lumen-JWT-Authenticated-API-with-lumen/#referencias" class="sidebar-link">Referências</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue.JS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>GIT</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Zero Absoluto</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SonarQuebe</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="jwt-authenticated-api-with-lumen"><a href="#jwt-authenticated-api-with-lumen" class="header-anchor">#</a> JWT Authenticated API with Lumen</h1> <h2 id="pre-requisitos"><a href="#pre-requisitos" class="header-anchor">#</a> Pré requisitos</h2> <p>Tenha o projeto lumen instalado dentro do Laradock.</p> <p>E já funcionando no localhost. (como na imagem abaixo)</p> <img src="/images/lumenapilocalhost.png"> <h2 id="instalacao"><a href="#instalacao" class="header-anchor">#</a> Instalação</h2> <p>Crie um arquivo .env, copie todo o conteúdo em .env.example no arquivo .env e adicione suas configurações de banco de dados.</p> <p>Em <strong>boostrap/app.php</strong> descomentar as fachadas e o método eloquente.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token comment">//before</span>
+
+<span class="token comment">// $app-&gt;withFacades();</span>
+
+<span class="token comment">// $app-&gt;withEloquent();</span>
+
+<span class="token comment">//after</span>
+
+<span class="token variable">$app</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">withFacades</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$app</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">withEloquent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="criacao-da-tabela-de-usuarios"><a href="#criacao-da-tabela-de-usuarios" class="header-anchor">#</a> Criação da tabela de usuários</h2> <p>Crie a migration do bando de dados com o seguinte comando:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ php artisan make:migration create_users_table --create<span class="token operator">=</span>users
+</code></pre></div><p>Localize o arquivo de migração <strong>database/migrations/*_create_users_table.php</strong> e adicione colunas da tabela de necessidade (nome, email, senha); veja o código abaixo:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Schema<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>Blueprint <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">bigIncrements</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">string</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">string</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'email'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">unique</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">notNullable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">string</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'password'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">timestamps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></div><p>Execute a migração do banco de dados.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ php artisan migrate
+</code></pre></div><p>Adicionar rota de registro que, como o nome indica; registrar usuários. Localize <strong>routes/web.php</strong> e insira o código necessário, como visto abaixo:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token comment">// API route group</span>
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'prefix'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'api'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment">// Matches &quot;/api/register</span>
+   <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'register'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'AuthController@register'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Como vamos usar o prefixo em todos os pontos de extremidade, para não causar repetição de cṍdigo, usaremos o agrupamento de rotas para fazer exatamente isso.</p> <p>Este método (<strong>$router-&gt;post($uri, $callback</strong>); recebe um parâmetro $ url e $ callback. No campo <strong>$callback</strong>, <strong>AuthController</strong> é a classe do Controller (criaremos essa classe daqui a pouco) e <strong>register</strong> é um método nessa classe.</p> <p>Vamos criar nosso AuthControler.</p> <p>Crie um arquivo <strong>app/Http/Controllers/AuthController.php</strong> e preencha-o com o código conforme mostrado abaixo.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span>  <span class="token package">App<span class="token punctuation">\</span>User</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AuthController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Store a new user.
+     *
+     * @param  Request  $request
+     * @return Response
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">register</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">//validate incoming request</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+            <span class="token single-quoted-string string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'required|string'</span><span class="token punctuation">,</span>
+            <span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'required|email|unique:users'</span><span class="token punctuation">,</span>
+            <span class="token single-quoted-string string">'password'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'required|confirmed'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+
+            <span class="token variable">$user</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">;</span>
+            <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">email</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'email'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$plainPassword</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'password'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">password</span> <span class="token operator">=</span> <span class="token function">app</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'hash'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token variable">$plainPassword</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">//return successful response</span>
+            <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'user'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$user</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'message'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'CREATED'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">201</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>\<span class="token package">Exception</span> <span class="token variable">$e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">//return error message</span>
+            <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'message'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'User Registration Failed!'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">409</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</span></code></pre></div><p>Registre um usuário (use POSTMAN) com a rota <strong>localhost:8000/api/register</strong> e você deverá obter uma resposta bem-sucedida como esta:</p> <img src="/images/lumen-api-exemplo-1-postman.png"> <h2 id="instalacao-do-pacote-de-autenticacao-jwt"><a href="#instalacao-do-pacote-de-autenticacao-jwt" class="header-anchor">#</a> Instalação do pacote de autenticação JWT</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>$ composer require tymon/jwt-auth
+</code></pre></div><p>Agora adicione o seguinte snippet ao <strong>bootstrap/app.php</strong> arquivo na seção provedores da seguinte maneira:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token comment">// Descomente está linha</span>
+<span class="token variable">$app</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">register</span><span class="token punctuation">(</span>App\<span class="token package">Providers<span class="token punctuation">\</span>AuthServiceProvider</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Adicione está linha</span>
+<span class="token variable">$app</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">register</span><span class="token punctuation">(</span>Tymon\<span class="token package">JWTAuth<span class="token punctuation">\</span>Providers<span class="token punctuation">\</span>LumenServiceProvider</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Em seguida, descomente o authmiddleware no mesmo arquivo:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token variable">$app</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">routeMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'auth'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> App\<span class="token package">Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>Authenticate</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Fazendo isso é incluido um comando auxiliar para gerar uma chave.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>php artisan jwt:secret
+</code></pre></div><p>Crie um arquivo <strong>config/auth.php</strong> com a configuração abaixo:</p> <div class="language-php extra-class"><pre class="language-php"><code>//config.auth.php
+
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">return</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'defaults'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'guard'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'api'</span><span class="token punctuation">,</span>
+        <span class="token single-quoted-string string">'passwords'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'users'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+    <span class="token single-quoted-string string">'guards'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'api'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+            <span class="token single-quoted-string string">'driver'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'jwt'</span><span class="token punctuation">,</span>
+            <span class="token single-quoted-string string">'provider'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'users'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+    <span class="token single-quoted-string string">'providers'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'users'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+            <span class="token single-quoted-string string">'driver'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'eloquent'</span><span class="token punctuation">,</span>
+            <span class="token single-quoted-string string">'model'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> \<span class="token package">App<span class="token punctuation">\</span>User</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token keyword">class</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+</span></code></pre></div><p>Faça algumas alterações no seu <strong>User</strong> model (<strong>app/User.php</strong>) para atender aos <strong>requisitos do tymon / jwt-auth</strong>. Fique de olho em tudo o que inclui &quot;JWT&quot;.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>Authenticatable</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Laravel<span class="token punctuation">\</span>Lumen<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>Authorizable</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Database<span class="token punctuation">\</span>Eloquent<span class="token punctuation">\</span>Model</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Contracts<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>Authenticatable</span> <span class="token keyword">as</span> AuthenticatableContract<span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Contracts<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>Access<span class="token punctuation">\</span>Authorizable</span> <span class="token keyword">as</span> AuthorizableContract<span class="token punctuation">;</span>
+
+
+<span class="token keyword">use</span> <span class="token package">Tymon<span class="token punctuation">\</span>JWTAuth<span class="token punctuation">\</span>Contracts<span class="token punctuation">\</span>JWTSubject</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span> <span class="token keyword">implements</span> <span class="token class-name">AuthenticatableContract</span><span class="token punctuation">,</span> AuthorizableContract<span class="token punctuation">,</span> JWTSubject
+<span class="token punctuation">{</span>
+    <span class="token keyword">use</span> <span class="token package">Authenticatable</span><span class="token punctuation">,</span> Authorizable<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */</span>
+    <span class="token keyword">protected</span> <span class="token variable">$fillable</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'email'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */</span>
+    <span class="token keyword">protected</span> <span class="token variable">$hidden</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token single-quoted-string string">'password'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+
+
+
+    <span class="token comment">/**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">getJWTIdentifier</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">getJWTCustomClaims</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</span></code></pre></div><p>Adicionar rota de login em <strong>routes/web.php</strong>:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token comment">// API route group</span>
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'prefix'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'api'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token comment">// Matches &quot;/api/register</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'register'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'AuthController@register'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Matches &quot;/api/login</span>
+     <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'login'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'AuthController@login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Adicione um método global <strong>respondWithToken</strong> à classe Controller em <strong>app/Http/Controllers/Controller.php</strong>. Isso é para que possamos acessá-lo de qualquer outro controlador.</p> <div class="language-php extra-class"><pre class="language-php"><code>    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token comment">//import auth facades</span>
+    <span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Auth</span><span class="token punctuation">;</span>
+
+
+    <span class="token comment">//Add this method to the Controller class</span>
+    <span class="token keyword">protected</span> <span class="token keyword">function</span> <span class="token function">respondWithToken</span><span class="token punctuation">(</span><span class="token variable">$token</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+            <span class="token single-quoted-string string">'token'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$token</span><span class="token punctuation">,</span>
+            <span class="token single-quoted-string string">'token_type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'bearer'</span><span class="token punctuation">,</span>
+            <span class="token single-quoted-string string">'expires_in'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Auth<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getTTL</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">60</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>Adicione um método de login à sua classe <strong>AuthController</strong> em <strong>app/Http/Controllers/AuthController.php</strong>.</p> <div class="language-php extra-class"><pre class="language-php"><code> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+   <span class="token comment">//import auth facades</span>
+   <span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Auth</span><span class="token punctuation">;</span>
+
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+     <span class="token comment">/**
+     * Get a JWT via given credentials.
+     *
+     * @param  Request  $request
+     * @return Response
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">login</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+          <span class="token comment">//validate incoming request</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+            <span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'required|string'</span><span class="token punctuation">,</span>
+            <span class="token single-quoted-string string">'password'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'required|string'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token variable">$credentials</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">only</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'email'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token variable">$token</span> <span class="token operator">=</span> Auth<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">attempt</span><span class="token punctuation">(</span><span class="token variable">$credentials</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'message'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'Unauthorized'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">401</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">respondWithToken</span><span class="token punctuation">(</span><span class="token variable">$token</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>Faça login em um usuário que você cadastrou na rota <strong>localhost:8000/api/login</strong> e você deverá obter uma resposta bem-sucedida, como:</p> <img src="/images/lumen-api-exemplo-2-postman.png"> <h2 id="rotas-autenticadas"><a href="#rotas-autenticadas" class="header-anchor">#</a> Rotas autenticadas</h2> <p>Para a nossa grande final, vamos fazer algumas rotas autenticadas.</p> <p>Adicione algumas rotas para <strong>routes/web.php</strong></p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment">// API route group</span>
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'prefix'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'api'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Matches &quot;/api/register</span>
+   <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'register'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'AuthController@register'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token comment">// Matches &quot;/api/login</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'login'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'AuthController@login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Matches &quot;/api/profile</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'profile'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'UserController@profile'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Matches &quot;/api/users/1</span>
+    <span class="token comment">//get one user by id</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users/{id}'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'UserController@singleUser'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Matches &quot;/api/users</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'UserController@allUsers'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></div><p>Crie um arquivo <strong>app/Http/Controllers/UserController.php</strong> e preencha-o com este código de aparência elegante.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Auth</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span>  <span class="token package">App<span class="token punctuation">\</span>User</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+     <span class="token comment">/**
+     * Instantiate a new UserController instance.
+     *
+     * @return void
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'auth'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get the authenticated User.
+     *
+     * @return Response
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">profile</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'user'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Auth<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get all User.
+     *
+     * @return Response
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">allUsers</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'users'</span> <span class="token operator">=</span><span class="token operator">&gt;</span>  User<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get one user.
+     *
+     * @return Response
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">singleUser</span><span class="token punctuation">(</span><span class="token variable">$id</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token variable">$user</span> <span class="token operator">=</span> User<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">findOrFail</span><span class="token punctuation">(</span><span class="token variable">$id</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'user'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$user</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>\<span class="token package">Exception</span> <span class="token variable">$e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'message'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'user not found!'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</span></code></pre></div><p>Abaixo está um exemplo de chamada para um dos três pontos de extremidade adicionados recentemente</p> <img src="/images/lumen-api-exemplo-3-postman.png">
+O fim-ish!
+<p>Espero que este artigo tenha ajudado você de alguma forma e que você desenvolva esse conhecimento para implantar APIs impressionantes em um futuro próximo.</p> <p>Até mais. 😃</p> <h2 id="referencias"><a href="#referencias" class="header-anchor">#</a> Referências</h2> <p>https://dev.to/ndiecodes/build-a-jwt-authenticated-api-with-lumen-2afm</p> <p>https://jwt-auth.readthedocs.io/en/develop/lumen-installation/</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/laravel-vue-validation-for-laravel/" class="prev">Vue Validation for Laravel</a></span> <span class="next"><a href="/vue-js/">VueJS</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9f1471da.js" defer></script><script src="/assets/js/2.028e1938.js" defer></script><script src="/assets/js/24.50c00c2e.js" defer></script>
+  </body>
+</html>
