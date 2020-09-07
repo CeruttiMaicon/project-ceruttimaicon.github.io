@@ -1,10 +1,28 @@
 module.exports = {
+  theme: 'yuu',
   description: "Minhas competências, anotações e documentações :)",
   title: "ceruttimaicon.js.org",
+  head: [
+    [
+      "script",
+      {
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+        "data-ad-client": "ca-pub-7563330699889675",
+        async: true,
+      },
+    ],
+    [
+      "script",
+      {},
+      "(adsbygoogle = window.adsbygoogle || []).push({  google_ad_client: <your code here>,  enable_page_level_ads: true });",
+    ],
+  ],
   themeConfig: {
     logo: "/images/perfil.jpeg",
-    nav: [
-      { text: "Guide", link: "/guide/" },
+    nav: [{
+        text: "Guide",
+        link: "/guide/"
+      },
       {
         text: "Linkedin",
         link: "https://www.linkedin.com/in/maicon-cerutti-516918114/",
@@ -14,8 +32,7 @@ module.exports = {
         link: "https://github.com/CeruttiMaicon",
       },
     ],
-    sidebar: [
-      {
+    sidebar: [{
         title: "Guide",
         children: ["/guide/"],
       },
@@ -38,9 +55,14 @@ module.exports = {
       },
       {
         title: "Sistemas Operacionais",
-        children: [
-          { title: "Linux Mint", children: ["/linux-mint-tema-mac/"] },
-          { title: "Linux Ubuntu", children: ["/linux-ubuntu-tema-mac/"] },
+        children: [{
+            title: "Linux Mint",
+            children: ["/linux-mint-tema-mac/"]
+          },
+          {
+            title: "Linux Ubuntu",
+            children: ["/linux-ubuntu-tema-mac/"]
+          },
         ],
       },
       {
@@ -78,7 +100,7 @@ module.exports = {
       },
       {
         title: "SonarQuebe",
-        children: ["/sonarqube/"],
+        children: ["/sonarqube/", "/sonarqube-utilizacao-rapida/"],
       },
     ],
   },
