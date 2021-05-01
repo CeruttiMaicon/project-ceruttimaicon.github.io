@@ -18,6 +18,13 @@ module.exports = {
     ],
   ],
   themeConfig: {
+    yuu: {
+      disableThemeIgnore: true,
+      colorThemes: [],
+      labels: {
+        darkTheme: 'Tema Dark', // Default is "Enable Dark Theme?"
+      },
+    },
     logo: "/images/perfil.jpeg",
     nav: [{
         text: "Guide",
