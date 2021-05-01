@@ -1,7 +1,7 @@
 module.exports = {
   theme: 'yuu',
   description: "Minhas competências, anotações e documentações :)",
-  title: "ceruttimaicon.js.org",
+  title: "Maicon Cerutti",
   head: [
     [
       "script",
