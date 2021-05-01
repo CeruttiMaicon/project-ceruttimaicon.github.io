@@ -96,6 +96,21 @@ $ sudo apt install zsh
 $ npm install spaceship-prompt
 ```
 
+**zsh-autosuggestions**: vai sugerir comandos baseados no seu histórico.
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+```
+
+Daí adicione zsh-autosuggestions na lista de plugins do seu “~/.zshrc”:
+
+**~/.zshrc**:
+```
+plugins=(git sudo zsh-autosuggestions)
+```
+
+
+
 ### Identidade Git
 
 Criando Identidade Git
